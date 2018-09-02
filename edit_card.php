@@ -30,5 +30,6 @@ function EditCard($db, $cardId)
     #echo "<input type=\"textarea\" rows=\"10\" cols=\"80\" name=\"desc\" value=\"", $desc, "\">"; // Not quite right...
     echo "<input type=\"submit\" value=\"Update\">";
     echo "</form>";
+    echo "Top tip - use HTML formatting for the description section<br><br>";
 }
 ?>

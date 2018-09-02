@@ -7,7 +7,7 @@ $db = DatabaseInit();
 if ($db) {
     $title = GetTitle($cardId, $db);
     $desc = GetDesc($cardId, $db);
-    echo "<h1>",$title,"</h1><br>";
+    echo "<a href=\"/flashcards/ShowTitle.php/?cardId=",$cardId,"\"><h1>",$title,"</h1></a><br>";
     echo "<h2>",$desc,"</h2><br>";
 }
 echo "<button class=\"button\" type=\"button\" onclick=\"window.location.href='/flashcards/edit_card.php/?cardId=",$cardId,"'\">Edit</button><br>";
