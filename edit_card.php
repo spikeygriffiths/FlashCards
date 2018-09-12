@@ -18,14 +18,19 @@ function EditCard($db, $cardId)
         $row =  $sth->fetch();
         $title = $row['title'];
         $desc = $row['description'];
+        $group = $row['grouping'];
     } else {
         $title = "New card title...";
         $desc = "Description...";
+        $group = "Group name....";
     }
     echo "<form action=\"/flashcards/save_title.php/?cardId=", $cardId, "\" method=\"post\">";
     echo "<input type=\"text\" size=\"40\" name=\"title\" value=\"", $title, "\">";
     echo "<input type=\"submit\" value=\"Update\"></form>";
     echo "(A blank title will remove the record from the database)<br><br>";
+    echo "<form action=\"/flashcards/save_group.php/?cardId=", $cardId, "\" method=\"post\">";
+    echo "<input type=\"text\" size=\"40\" name=\"group\" value=\"", $group, "\">";
+    echo "<input type=\"submit\" value=\"Update\"></form>";
     echo "<form action=\"/flashcards/save_desc.php/?cardId=", $cardId, "\" method=\"post\">";
     echo "<textarea id=\"desc\" rows=\"10\" cols=\"100\" wrap=\"hard\" name=\"desc\">", $desc, "</textarea>";
     echo "<input type=\"submit\" value=\"Update\">";

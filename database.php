@@ -34,6 +34,17 @@ function GetTitle($cardId, $db)
     return "Card not found";
 }
 
+function GetGroup($cardId, $db)
+{
+    $sth = $db->prepare("SELECT grouping FROM cards where card_id=\"".$cardId."\"");
+    $sth->execute();
+    $row = $sth->fetch();
+    if ($row != null) {
+        return $row['grouping'];
+    }
+    return "Card not found";
+}
+
 function GetDesc($cardId, $db)
 {
     $sth = $db->prepare("SELECT description FROM cards where card_id=\"".$cardId."\"");
