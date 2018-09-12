@@ -6,9 +6,9 @@ echo "<center>";
 echo "<h3>Folk Dancing</h3><h1>Flash Cards!</h1>";
 echo "<br>";
 $db = DatabaseInit();
+echo "<button class=\"button\" type=\"button\" onclick=\"window.location.href='/flashcards/RandomCard.php'\"><b>Random Card</b></button><br><br>";
 ShowGroups($db);
 echo "<button class=\"button\" type=\"button\" onclick=\"window.location.href='/flashcards/AllCards.php'\">Every Card</button><br><br>";
-echo "<button class=\"button\" type=\"button\" onclick=\"window.location.href='/flashcards/RandomCard.php'\">Random Card</button><br><br>";
 echo "</body></html>";
 
 function ShowGroups($db)
